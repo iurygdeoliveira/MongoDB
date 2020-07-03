@@ -1,0 +1,30 @@
+{
+  "name": "mongodb",
+  "version": "1.0.0",
+  "description": "API com MongoDB e Express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/iurygdeoliveira/MongoDB.git"
+  },
+  "author": "Iury Gomes de Oliveira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iurygdeoliveira/MongoDB/issues"
+  },
+  "homepage": "https://github.com/iurygdeoliveira/MongoDB#readme",
+  "type": "module",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "consign": "^0.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.21"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}
