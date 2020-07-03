@@ -4,8 +4,9 @@
   "description": "API com MongoDB e Express",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "babel-node": "babel-node --presets=latest",
+    "start": "nodemon --exec npm run babel-node -- ./server.js",
+    "build": "babel src -d dist"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,14 @@
     "express": "^4.17.1",
     "mongoose": "^5.9.21"
   },
+  "babel": {
+    "presets": [
+      "latest"
+    ]
+  },
   "devDependencies": {
-    "babel-cli": "^6.26.0"
+    "babel-cli": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
+    "nodemon": "^2.0.4"
   }
 }

@@ -37,13 +37,11 @@ const collection = mongoose.Schema({
     default: Date.now,
   },
 });
-
 /*
 #############
 # SET MODEL #
 #############
 */
 
-const produto = mongoose.model('produto', collection);
-
-export default produto;
+const produtoModel = mongoose.model('produto', collection);
+module.exports = produtoModel;
