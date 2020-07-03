@@ -10,6 +10,23 @@
 import mongoose from 'mongoose';
 
 /*
+############
+# CONEXION #
+############
+*/
+
+let connect = mongoose.connect(
+  'mongodb+srv://mongodb:z6RMqNO91wQYRser@teste.sf57x.mongodb.net/teste?retryWrites=true&w=majority',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  },
+  () => {
+    console.log('Banco de dados conectado');
+  }
+);
+
+/*
 ##########
 # SCHEMA #
 ##########
