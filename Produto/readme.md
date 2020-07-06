@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="">
+  <img src="https://github.com/iurygdeoliveira/MongoDB/blob/master/Produto/source/storage/img/Capa.jpg">
 </p>
 
 ## Desenvolvedor (Developer):
@@ -16,9 +16,9 @@
 
 ## Demonstração em Vídeo (Video Demo)
 
-> Link para vídeo demonstrativo:
+> Link para vídeo demonstrativo: https://youtu.be/Tfniks8tKZE
 
-> Demo video link:
+> Demo video link: https://youtu.be/Tfniks8tKZE
 
 ## Objetivos
 
