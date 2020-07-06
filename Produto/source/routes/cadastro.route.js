@@ -1,33 +1,45 @@
+import helpers from '../helpers/config.js';
 import produtoModel from '../models/produto.schema.js';
 
+//console.log(db);
 /*
 ############
 # ENDPOINT #
 ############
 */
 module.exports = (server) => {
-  server.post('/cadastro', async (req, res) => {
+  server.post(helpers.endpoints.cadastro, async (req, res) => {
     try {
-      let { nome, fabricante, preco } = req.body;
+      // Validando dados
+      if (
+        req.body.nome != undefined &&
+        req.body.fabricante != undefined &&
+        req.body.preco != undefined &&
+        req.body.preco > 0
+      ) {
+        console.log(req.body);
+        let { nome, fabricante, preco } = req.body;
 
-      // Construindo um novo produto
-      let novoProduto = new produtoModel({
-        nome: nome,
-        fabricante: fabricante,
-        preco: preco,
-      });
+        // let novoProduto = db.create({
+        //   nome: nome,
+        //   fabricante: fabricante,
+        //   preco: preco,
+        // });
 
-      //console.log(novoProduto);
-
-      // Salvando um novo produto
-      novoProduto
-        .save()
-        .then(() => {
-          res.status(201).send({ resultado: 'Dado salvo com sucesso' });
-        })
-        .catch((error) => {
-          if (error) throw error;
+        // Salvando um novo produto
+        // novoProduto
+        //   .save()
+        //   .then(() => {
+        //     res.status(201).send({ resultado: 'Dado salvo com sucesso' });
+        //   })
+        //   .catch((error) => {
+        //     if (error) throw error;
+        //   });
+      } else {
+        res.status(406).send({
+          resultado: 'Dados Invalidos',
         });
+      }
     } catch (error) {
       // Qualquer erro no decorrer do processo enviar mensagem de erro
       // e status 400

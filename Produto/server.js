@@ -16,7 +16,9 @@ const server = express();
  */
 
 consign()
-  .include('/source/helpers/middlewares.js')
-  .then('/source/routes')
+  .include('/source/helpers/config.js')
+  .then('/source/helpers/middlewares.js')
+  .then('/source/helpers/connectDB.js')
   .then('/source/helpers/boot.js')
+  .then('/source/routes')
   .into(server);

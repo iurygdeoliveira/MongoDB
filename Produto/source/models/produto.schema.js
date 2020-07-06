@@ -1,30 +1,5 @@
-/*
-###########
-# IMPORTS #
-###########
-*/
-
-// A PRINCIPAL IMPORTÂNCIA DO MONGOOSE, PROVER UMA ABSTRAÇÃO AO PROGRAMADOR
-// DEIXANDO A PROGRAMAÇÃO MAIS PRÓXIMA DA ORIENTAÇÃO A OBJETOS
-
 import mongoose from 'mongoose';
-
-/*
-############
-# CONEXION #
-############
-*/
-
-let connect = mongoose.connect(
-  'mongodb+srv://mongodb:z6RMqNO91wQYRser@teste.sf57x.mongodb.net/teste?retryWrites=true&w=majority',
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  },
-  () => {
-    console.log('Banco de dados conectado');
-  }
-);
+import helpers from '../helpers/config.js';
 
 /*
 ##########
@@ -32,7 +7,7 @@ let connect = mongoose.connect(
 ##########
 */
 
-const collection = mongoose.Schema({
+const schema = new mongoose.Schema({
   nome: {
     type: String,
     require: true,
@@ -44,21 +19,17 @@ const collection = mongoose.Schema({
   preco: {
     type: String,
     require: true,
-    validate(value) {
-      if (value < 0)
-        throw new Error('Valor negativo para a nota não permitido');
-    },
   },
   lastModified: {
     type: Date,
     default: Date.now,
   },
 });
+
 /*
-#############
-# SET MODEL #
-#############
+###########
+# EXPORTS #
+###########
 */
 
-const produtoModel = mongoose.model('produto', collection);
-module.exports = produtoModel;
+export default mongoose.model(helpers.schemas.produtos, schema);
