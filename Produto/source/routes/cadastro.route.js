@@ -17,24 +17,23 @@ module.exports = (server) => {
         req.body.preco != undefined &&
         req.body.preco > 0
       ) {
-        console.log(req.body);
         let { nome, fabricante, preco } = req.body;
 
-        // let novoProduto = db.create({
-        //   nome: nome,
-        //   fabricante: fabricante,
-        //   preco: preco,
-        // });
+        const novoProduto = await produtoModel.create({
+          nome: nome,
+          fabricante: fabricante,
+          preco: preco,
+        });
 
         // Salvando um novo produto
-        // novoProduto
-        //   .save()
-        //   .then(() => {
-        //     res.status(201).send({ resultado: 'Dado salvo com sucesso' });
-        //   })
-        //   .catch((error) => {
-        //     if (error) throw error;
-        //   });
+        novoProduto
+          .save()
+          .then(() => {
+            res.status(201).send({ resultado: 'Dado salvo com sucesso' });
+          })
+          .catch((error) => {
+            if (error) throw error;
+          });
       } else {
         res.status(406).send({
           resultado: 'Dados Invalidos',

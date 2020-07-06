@@ -1,5 +1,5 @@
 import helpers from '../helpers/config.js';
-import db from '../helpers/middlewares.js';
+import produtoModel from '../models/produto.schema.js';
 
 /*
 ############
@@ -7,18 +7,10 @@ import db from '../helpers/middlewares.js';
 ############
 */
 module.exports = (server) => {
-  server.get('/produtos', async (req, res) => {
-    let { nome, fabricante, preco } = req.body;
-
+  server.get(helpers.endpoints.listar, async (req, res) => {
     try {
-      // helpers.getConnect();
-
-      //let Produtos = helpers.createModel('Produto', produtoSchema);
-
-      console.log(Produtos);
-
       // Buscando todos os produtos
-      Produtos.find({}, (error, dados) => {
+      produtoModel.find({}, (error, dados) => {
         if (error) {
           res.status(400).send({
             resultado: 'Erro ao listar produtos',
@@ -38,16 +30,10 @@ module.exports = (server) => {
     }
   });
 
-  server.get('/produto/:nome', async (req, res) => {
+  server.get(helpers.endpoints.listarByName, async (req, res) => {
     try {
-      helpers.getConnect();
-
-      //let Produto = helpers.createModel('Produto', produtoSchema);
-
-      //console.log(Produto);
-
-      // Buscando todos os produtos
-      Produto.find({ nome: req.params.nome }, (error, dados) => {
+      // Buscando por nome
+      produtoModel.find({ nome: req.params.nome }, (error, dados) => {
         if (error) {
           res.status(400).send({
             resultado: 'Erro ao listar produto',

@@ -10,9 +10,9 @@
 
 ## Status
 
-> Status do Projeto: Incompleto :X:
+> Status do Projeto: Concluido :heavy_check_mark:
 
-> Project Status: Incompleto :X:
+> Project Status: Concluido :heavy_check_mark:
 
 ## Demonstração em Vídeo (Video Demo)
 
@@ -22,6 +22,6 @@
 
 ## Objetivos
 
-## Enunciado
-
-## Atividades
+Este projeto procura demonstrar a organização de uma API Rest, organizando
+e seperando as responsabilidades por arquivos, conforme o sistema cresce
+fica confuso e extremamente difícil de ler e dar manutenção em nossas API's
