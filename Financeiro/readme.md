@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/iurygdeoliveira/MongoDB/blob/master/Produto/source/storage/img/Capa.jpg">
+  <img src="">
 </p>
 
 ## Desenvolvedor (Developer):
@@ -10,18 +10,14 @@
 
 ## Status
 
-> Status do Projeto: Concluido :heavy_check_mark:
+> Status do Projeto: Incomleto :X:
 
-> Project Status: Concluido :heavy_check_mark:
+> Project Status: Incomleto :X:
 
 ## Demonstração em Vídeo (Video Demo)
 
-> Link para vídeo demonstrativo: https://youtu.be/Tfniks8tKZE
+> Link para vídeo demonstrativo:
 
-> Demo video link: https://youtu.be/Tfniks8tKZE
+> Demo video link:
 
 ## Objetivos
-
-Este projeto procura demonstrar a organização de uma API Rest, organizando
-e seperando as responsabilidades por arquivos, conforme o sistema cresce
-fica confuso e extremamente difícil de ler e dar manutenção em nossas API's
