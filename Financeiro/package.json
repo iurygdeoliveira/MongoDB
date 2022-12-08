@@ -20,9 +20,9 @@
   "homepage": "https://github.com/iurygdeoliveira/MongoDB#readme",
   "type": "module",
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.20.1",
     "consign": "^0.1.6",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "mongoose": "^5.9.21"
   },
   "babel": {
